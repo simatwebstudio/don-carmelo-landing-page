@@ -8,35 +8,49 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Don Carmelo — dark / gold brand */
+    --background: 0 0% 4%;
+    --foreground: 40 30% 96%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 0 0% 7%;
+    --card-foreground: 40 30% 96%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 7%;
+    --popover-foreground: 40 30% 96%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 44 82% 55%;          /* warm gold */
+    --primary-foreground: 0 0% 6%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 0 0% 12%;
+    --secondary-foreground: 40 30% 96%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 0 0% 14%;
+    --muted-foreground: 40 10% 70%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 12 78% 52%;            /* ember red — burger sauce */
+    --accent-foreground: 40 30% 96%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 70% 45%;
+    --destructive-foreground: 40 30% 96%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 44 30% 18%;
+    --input: 0 0% 14%;
+    --ring: 44 82% 55%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
+
+    --gold: 44 82% 55%;
+    --gold-bright: 48 95% 65%;
+    --gold-deep: 38 75% 42%;
+
+    --gradient-gold: linear-gradient(135deg, hsl(var(--gold-deep)), hsl(var(--gold-bright)) 50%, hsl(var(--gold)));
+    --gradient-radial-gold: radial-gradient(circle at 30% 20%, hsl(var(--gold) / 0.18), transparent 60%);
+    --gradient-dark: linear-gradient(180deg, hsl(0 0% 6%), hsl(0 0% 3%));
+
+    --shadow-gold: 0 20px 60px -20px hsl(var(--gold) / 0.45);
+    --shadow-deep: 0 30px 80px -30px hsl(0 0% 0% / 0.9);
+
+    --transition-smooth: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
 
     --sidebar-background: 0 0% 98%;
 
@@ -100,6 +114,91 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', system-ui, sans-serif;
+    background-image:
+      radial-gradient(ellipse at top, hsl(var(--gold) / 0.08), transparent 60%),
+      radial-gradient(ellipse at bottom right, hsl(var(--accent) / 0.06), transparent 50%);
+    background-attachment: fixed;
   }
+
+  h1, h2, h3, .font-display {
+    font-family: 'Bebas Neue', 'Oswald', sans-serif;
+    letter-spacing: 0.02em;
+  }
+
+  .font-script {
+    font-family: 'Great Vibes', cursive;
+  }
+
+  .font-condensed {
+    font-family: 'Oswald', sans-serif;
+  }
+}
+
+@layer utilities {
+  .text-gold {
+    color: hsl(var(--gold));
+  }
+  .bg-gradient-gold {
+    background: var(--gradient-gold);
+  }
+  .text-gradient-gold {
+    background: var(--gradient-gold);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .shadow-gold {
+    box-shadow: var(--shadow-gold);
+  }
+  .shadow-deep {
+    box-shadow: var(--shadow-deep);
+  }
+  .transition-smooth {
+    transition: var(--transition-smooth);
+  }
+  .gold-divider {
+    height: 2px;
+    background: linear-gradient(90deg, transparent, hsl(var(--gold) / 0.8), transparent);
+  }
+  .dotted-divider {
+    background-image: linear-gradient(90deg, hsl(var(--gold)) 50%, transparent 50%);
+    background-size: 18px 3px;
+    background-repeat: repeat-x;
+    background-position: center;
+    height: 3px;
+  }
+}
+
+@layer components {
+  .container-px {
+    @apply px-6 md:px-10;
+  }
+}
+
+@keyframes float-up {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+@keyframes fade-in-up {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-float { animation: float-up 6s ease-in-out infinite; }
+.animate-fade-in-up { animation: fade-in-up 0.8s cubic-bezier(0.22, 1, 0.36, 1) both; }
+
+/* shimmering gold text */
+.shimmer-gold {
+  background: linear-gradient(90deg, hsl(var(--gold-deep)) 0%, hsl(var(--gold-bright)) 50%, hsl(var(--gold-deep)) 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: shimmer 4s linear infinite;
 }
