@@ -1,24 +1,21 @@
-# Logs
+# Logs e file locali
 logs
 *.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-pnpm-debug.log*
-lerna-debug.log*
+*.local
 
+# Dipendenze e build locali eventualmente generati
 node_modules
 dist
 dist-ssr
-*.local
 
-# Editor directories and files
+# Editor e sistema operativo
 .vscode/*
 !.vscode/extensions.json
 .idea
 .DS_Store
+Thumbs.db
 *.suo
 *.ntvs*
-*.njsproj
+*.njsproj*
 *.sln
 *.sw?
