@@ -6,13 +6,13 @@
     "cheeseItem04": "Mozzarella di Bufala",
     "cheeseTitle": "Formaggi",
     "eyebrow": "— Componilo tu —",
-    "image": "assets/apple-touch-icon.webp",
+    "image": "assets/build-panino.webp",
     "meatItem01": "Salamella",
     "meatItem02": "Porchetta",
     "meatItem03": "Wurstel",
     "meatItem04": "",
     "meatTitle": "Carne",
-    "price": "€ 7,00",
+    "price": "€ 8,00",
     "priceLabel": "Il tuo panino composto",
     "sauceItem01": "Maionese",
     "sauceItem02": "Ketchup",
@@ -89,9 +89,9 @@
     "lunchPlace01": "Moglia di Cherasco",
     "lunchPlace02": "Moglia di Cherasco",
     "lunchPlace03": "Moglia di Cherasco",
-    "lunchTime01": "12.00 — 19.00",
-    "lunchTime02": "12.00 — 19.00",
-    "lunchTime03": "12.00 — 19.00",
+    "lunchTime01": "12.00 — 14.00",
+    "lunchTime02": "12.00 — 14.00",
+    "lunchTime03": "12.00 — 14.00",
     "lunchTitle": "Orario",
     "lunchTitleAccent": "Pranzo",
     "note": "Per eventi privati e collaborazioni, scrivici in DM su Instagram.",
@@ -121,7 +121,7 @@
     "side02Price": "€ 4,50",
     "side02Title": "PORZIONE GRANDE",
     "title": "MENÙ",
-    "titleAccent": "DON CARMELO"
+    "titleAccent": "DON CARMEL"
   },
   "navbar": {
     "brandHref": "#top",
@@ -144,11 +144,11 @@
   },
   "seo": {
     "author": "Don Carmelo Foodtruck",
-    "canonicalUrl": "https://www.doncarmelofoodtruck.it/",
+    "canonicalUrl": "https://simatwebstudio.github.io/don-carmelo-landing-page/",
     "description": "Don Carmelo Foodtruck: panini gourmet, street food e patatine fritte. Crea il tuo panino in Piazza Giolitti a Bra e a Moglia di Cherasco.",
     "robots": "index, follow",
     "socialDescription": "Panini artigianali, patatine fritte croccanti e ingredienti scelti con cura a Bra e Moglia di Cherasco.",
-    "socialImage": "https://www.doncarmelofoodtruck.it/images/hero-panino.jpg",
+    "socialImage": "https://simatwebstudio.github.io/don-carmelo-landing-page/images/hero-panino.jpg",
     "title": "Don Carmelo Foodtruck — Panini gourmet a Bra e Moglia di Cherasco"
   }
 }
